@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .blur {
+    @apply blur-sm;
+  }
+
+  .info {
+    @apply mb-8;
+  }
+
+  nav {
+    @apply fixed left-0 top-0 z-[1000] flex h-full w-[240px] flex-col items-center bg-black p-4 text-center text-white transition-transform duration-300 ease-in-out;
+  }
+
+  nav img {
+    @apply mb-4 mt-6 w-[120px] rounded-full;
+  }
+
+  .social-icons {
+    @apply flex justify-center gap-4 text-[1.5rem];
+  }
+
+  nav ul {
+    @apply w-full list-none p-0 text-left;
+  }
+
+  nav ul li {
+    @apply m-4;
+  }
+
+  nav ul li a {
+    @apply font-bold text-white no-underline;
+  }
+
+  .social-icons a {
+    @apply text-white transition-colors duration-200 ease-in-out;
+  }
+
+  .social-icons a:hover {
+    @apply text-[#09f];
+  }
+
+  .menu-toggle {
+    @apply fixed bottom-4 right-4 z-[1001] hidden cursor-pointer rounded-full border-none bg-black p-4 text-[0.8rem] text-white;
+  }
+
+  footer {
+    @apply mt-16 text-center text-sm text-[#777];
+  }
+
+  .hero {
+    @apply relative flex h-[50vh] items-center justify-center overflow-hidden;
+  }
+
+  .hero-img {
+    @apply absolute z-0 h-full w-full object-cover;
+  }
+
+  .hero::before {
+    content: '';
+    @apply absolute left-0 top-0 z-[1] h-full w-full;
+  }
+
+  .hero-content {
+    @apply relative z-[2] flex h-screen flex-col items-center justify-center text-center;
+  }
+
+  .hero h1 {
+    @apply m-0 text-5xl;
+  }
+
+  .hero p {
+    @apply my-2 text-2xl font-bold;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 768px) {
+    .hero {
+      @apply h-[20vh];
+    }
+
+    nav {
+      transform: translateX(-100%);
+    }
+
+    nav.active {
+      transform: translateX(0);
+    }
+
+    .menu-toggle {
+      @apply block;
+    }
+
+    .hero h1 {
+      @apply text-2xl;
+    }
+
+    .hero p {
+      @apply text-xl;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1250px) {
+    .hero {
+      @apply h-[28vh];
+    }
+  }
+}

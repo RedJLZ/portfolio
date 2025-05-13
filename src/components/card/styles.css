@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .card {
+    @apply mb-4 cursor-pointer rounded-[12px] bg-white p-6 shadow-md transition-transform duration-200 ease-in-out;
+  }
+
+  .card:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  .card h3,
+  .card h4 {
+    @apply mt-0 font-semibold text-[#222];
+  }
+
+  .card .date {
+    @apply mb-2 font-medium text-[#09f];
+  }
+
+  .card small {
+    @apply text-[#555];
+  }
+
+  .card a {
+    @apply text-[#09f];
+  }
+
+  #experiencia,
+  #proyectos {
+    @apply flex items-center justify-center text-[1.2rem] font-bold;
+  }
+
+  .card-grid {
+    @apply mx-auto my-8 grid max-w-[1000px] gap-8 px-4;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .title {
+    @apply text-white;
+  }
+}
