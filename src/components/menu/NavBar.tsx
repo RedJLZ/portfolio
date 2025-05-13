@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {FaBars, FaGithub, FaLinkedin} from 'react-icons/fa';
+import profile from '../../assets/profile.jpg';
 import './styles.css';
 
 const NavBar = () => {
@@ -35,11 +36,7 @@ const NavBar = () => {
       </button>
 
       <nav id="side-menu" className={menuActive ? 'active' : ''}>
-        <img
-          id="photo-image"
-          src="/src/assets/profile.jpg"
-          alt="Foto de perfil"
-        />
+        <img id="photo-image" src={profile} alt="Foto de perfil" />
         <div className="social-icons">
           <a
             href="https://github.com/RedJLZ"
